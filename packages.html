@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - RentVenture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .package-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="compass" class="text-indigo-600 h-8 w-8"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">RentVenture</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="packages.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Packages</a>
+                        <a href="about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About Us</a>
+                        <a href="cart.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Cart (0)</a>
+                        <a href="profile.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Profile</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="admin.html" class="px-4 py-2 text-sm font-medium text-indigo-600 hover:text-indigo-800">Admin</a>
+                    <span class="px-4 py-2 text-sm font-medium text-gray-700">Welcome, User!</span>
+                    <a href="login.html" class="ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h1 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Choose Your Adventure Gear</h1>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">We've got everything you need for any type of adventure.</p>
+            </div>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="packages.html" class="px-4 py-2 rounded-full text-sm font-medium bg-indigo-600 text-white">All Categories</a>
+                <a href="packages.html?category=Winter" class="px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300">Winter</a>
+                <a href="packages.html?category=Water+Sports" class="px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300">Water Sports</a>
+                <a href="packages.html?category=Camping" class="px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300">Camping</a>
+            </div>
+
+            <div class="mt-10 pb-16">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Equipment Item 1 -->
+                    <div class="package-card bg-white overflow-hidden shadow-lg rounded-xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="images/tent1.jpg" alt="Camping Tent Deluxe" class="w-full h-full object-cover">
+                            <div class="absolute top-3 left-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">Camping</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Camping Tent Deluxe</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Spacious 4-person tent with waterproof coating and easy setup.</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-3xl font-bold text-indigo-600">RM45.00</span>
+                                    <span class="text-sm text-gray-500">per day</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="text-xs text-gray-600">Stock: 15 pieces available</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 space-y-3">
+                                <div id="inputs_1" class="grid grid-cols-2 gap-2 hidden">
+                                    <div>
+                                        <label for="quantity_1" class="block text-xs font-medium text-gray-700 mb-1">Quantity</label>
+                                        <input type="number" id="quantity_1" min="1" max="15" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label for="days_1" class="block text-xs font-medium text-gray-700 mb-1">Days</label>
+                                        <input type="number" id="days_1" min="1" max="30" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                </div>
+                                <button id="rent_btn_1" onclick="showInputs(1)" class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200">
+                                    <i data-feather="shopping-cart" class="mr-2 h-4 w-4"></i>
+                                    Rent Now
+                                </button>
+                                <button id="add_btn_1" onclick="rentEquipment(1)" class="w-full hidden justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 transition-all duration-200">
+                                    <i data-feather="check" class="mr-2 h-4 w-4"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 2 -->
+                    <div class="package-card bg-white overflow-hidden shadow-lg rounded-xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="images/kayak1.jpg" alt="Kayak Pro" class="w-full h-full object-cover">
+                            <div class="absolute top-3 left-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">Water Sports</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Kayak Pro</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Single-person kayak with paddle and safety equipment included.</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-3xl font-bold text-indigo-600">RM65.00</span>
+                                    <span class="text-sm text-gray-500">per day</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="text-xs text-gray-600">Stock: 8 pieces available</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 space-y-3">
+                                <div id="inputs_2" class="grid grid-cols-2 gap-2 hidden">
+                                    <div>
+                                        <label for="quantity_2" class="block text-xs font-medium text-gray-700 mb-1">Quantity</label>
+                                        <input type="number" id="quantity_2" min="1" max="8" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label for="days_2" class="block text-xs font-medium text-gray-700 mb-1">Days</label>
+                                        <input type="number" id="days_2" min="1" max="30" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                </div>
+                                <button id="rent_btn_2" onclick="showInputs(2)" class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200">
+                                    <i data-feather="shopping-cart" class="mr-2 h-4 w-4"></i>
+                                    Rent Now
+                                </button>
+                                <button id="add_btn_2" onclick="rentEquipment(2)" class="w-full hidden justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 transition-all duration-200">
+                                    <i data-feather="check" class="mr-2 h-4 w-4"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 3 -->
+                    <div class="package-card bg-white overflow-hidden shadow-lg rounded-xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="images/hiking1.jpg" alt="Hiking Gear Set" class="w-full h-full object-cover">
+                            <div class="absolute top-3 left-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">Camping</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Hiking Gear Set</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Complete hiking set including backpack, boots, and trekking poles.</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-3xl font-bold text-indigo-600">RM35.00</span>
+                                    <span class="text-sm text-gray-500">per day</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="text-xs text-gray-600">Stock: 20 pieces available</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 space-y-3">
+                                <div id="inputs_3" class="grid grid-cols-2 gap-2 hidden">
+                                    <div>
+                                        <label for="quantity_3" class="block text-xs font-medium text-gray-700 mb-1">Quantity</label>
+                                        <input type="number" id="quantity_3" min="1" max="20" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label for="days_3" class="block text-xs font-medium text-gray-700 mb-1">Days</label>
+                                        <input type="number" id="days_3" min="1" max="30" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                </div>
+                                <button id="rent_btn_3" onclick="showInputs(3)" class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200">
+                                    <i data-feather="shopping-cart" class="mr-2 h-4 w-4"></i>
+                                    Rent Now
+                                </button>
+                                <button id="add_btn_3" onclick="rentEquipment(3)" class="w-full hidden justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 transition-all duration-200">
+                                    <i data-feather="check" class="mr-2 h-4 w-4"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 4 -->
+                    <div class="package-card bg-white overflow-hidden shadow-lg rounded-xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="images/ski1.jpg" alt="Ski Equipment" class="w-full h-full object-cover">
+                            <div class="absolute top-3 left-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">Winter</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ski Equipment Set</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Complete ski set with skis, boots, and poles. Perfect for beginners.</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-3xl font-bold text-indigo-600">RM85.00</span>
+                                    <span class="text-sm text-gray-500">per day</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="text-xs text-gray-600">Stock: 10 pieces available</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 space-y-3">
+                                <div id="inputs_4" class="grid grid-cols-2 gap-2 hidden">
+                                    <div>
+                                        <label for="quantity_4" class="block text-xs font-medium text-gray-700 mb-1">Quantity</label>
+                                        <input type="number" id="quantity_4" min="1" max="10" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label for="days_4" class="block text-xs font-medium text-gray-700 mb-1">Days</label>
+                                        <input type="number" id="days_4" min="1" max="30" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                </div>
+                                <button id="rent_btn_4" onclick="showInputs(4)" class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200">
+                                    <i data-feather="shopping-cart" class="mr-2 h-4 w-4"></i>
+                                    Rent Now
+                                </button>
+                                <button id="add_btn_4" onclick="rentEquipment(4)" class="w-full hidden justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 transition-all duration-200">
+                                    <i data-feather="check" class="mr-2 h-4 w-4"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 5 -->
+                    <div class="package-card bg-white overflow-hidden shadow-lg rounded-xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="images/surf1.jpg" alt="Surfboard" class="w-full h-full object-cover">
+                            <div class="absolute top-3 left-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">Water Sports</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Surfboard Pro</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">High-performance surfboard for experienced surfers.</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-3xl font-bold text-indigo-600">RM55.00</span>
+                                    <span class="text-sm text-gray-500">per day</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="text-xs text-gray-600">Stock: 6 pieces available</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 space-y-3">
+                                <div id="inputs_5" class="grid grid-cols-2 gap-2 hidden">
+                                    <div>
+                                        <label for="quantity_5" class="block text-xs font-medium text-gray-700 mb-1">Quantity</label>
+                                        <input type="number" id="quantity_5" min="1" max="6" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label for="days_5" class="block text-xs font-medium text-gray-700 mb-1">Days</label>
+                                        <input type="number" id="days_5" min="1" max="30" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                </div>
+                                <button id="rent_btn_5" onclick="showInputs(5)" class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200">
+                                    <i data-feather="shopping-cart" class="mr-2 h-4 w-4"></i>
+                                    Rent Now
+                                </button>
+                                <button id="add_btn_5" onclick="rentEquipment(5)" class="w-full hidden justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 transition-all duration-200">
+                                    <i data-feather="check" class="mr-2 h-4 w-4"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Item 6 -->
+                    <div class="package-card bg-white overflow-hidden shadow-lg rounded-xl transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="images/sleeping1.jpg" alt="Sleeping Bag" class="w-full h-full object-cover">
+                            <div class="absolute top-3 left-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">Camping</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sleeping Bag Premium</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Warm and comfortable sleeping bag rated for -10°C.</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-3xl font-bold text-indigo-600">RM25.00</span>
+                                    <span class="text-sm text-gray-500">per day</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="text-xs text-gray-600">Stock: 25 pieces available</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 space-y-3">
+                                <div id="inputs_6" class="grid grid-cols-2 gap-2 hidden">
+                                    <div>
+                                        <label for="quantity_6" class="block text-xs font-medium text-gray-700 mb-1">Quantity</label>
+                                        <input type="number" id="quantity_6" min="1" max="25" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label for="days_6" class="block text-xs font-medium text-gray-700 mb-1">Days</label>
+                                        <input type="number" id="days_6" min="1" max="30" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    </div>
+                                </div>
+                                <button id="rent_btn_6" onclick="showInputs(6)" class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200">
+                                    <i data-feather="shopping-cart" class="mr-2 h-4 w-4"></i>
+                                    Rent Now
+                                </button>
+                                <button id="add_btn_6" onclick="rentEquipment(6)" class="w-full hidden justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 transition-all duration-200">
+                                    <i data-feather="check" class="mr-2 h-4 w-4"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">RentVenture</h3>
+                    <p class="text-gray-300 text-sm">Your one-stop shop for all adventure equipment rentals. Quality gear for unforgettable experiences.</p>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white text-sm">Home</a></li>
+                        <li><a href="packages.html" class="text-gray-300 hover:text-white text-sm">Packages</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white text-sm">About Us</a></li>
+                        <li><a href="login.html" class="text-gray-300 hover:text-white text-sm">Login</a></li>
+                        <li><a href="register.html" class="text-gray-300 hover:text-white text-sm">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li class="flex items-center"><i data-feather="mail" class="mr-2 h-4 w-4"></i> info@rentventure.com</li>
+                        <li class="flex items-center"><i data-feather="phone" class="mr-2 h-4 w-4"></i> (303) 555-0123</li>
+                        <li class="flex items-center"><i data-feather="map-pin" class="mr-2 h-4 w-4"></i> Jalan Dato Seri Kamaruddin Institut Kemahiran Mara Lumut, 32040 Seri Manjung, Perak</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700">
+                <p class="text-gray-400 text-xs text-center">&copy; 2025 RentVenture LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showInputs(equipmentId) {
+            // Show the inputs
+            const inputsDiv = document.getElementById('inputs_' + equipmentId);
+            const rentBtn = document.getElementById('rent_btn_' + equipmentId);
+            const addBtn = document.getElementById('add_btn_' + equipmentId);
+            
+            inputsDiv.classList.remove('hidden');
+            rentBtn.classList.add('hidden');
+            addBtn.classList.remove('hidden');
+            addBtn.classList.add('flex');
+            
+            // Re-initialize feather icons for the new button
+            feather.replace();
+        }
+        
+        function rentEquipment(equipmentId) {
+            const quantityInput = document.getElementById('quantity_' + equipmentId);
+            const daysInput = document.getElementById('days_' + equipmentId);
+            
+            const quantity = parseInt(quantityInput.value);
+            const days = parseInt(daysInput.value);
+            const maxQuantity = parseInt(quantityInput.max);
+            
+            if (!quantity || quantity < 1 || quantity > maxQuantity) {
+                alert('Please enter a valid quantity (1-' + maxQuantity + ').');
+                return;
+            }
+            
+            if (!days || days < 1 || days > 30) {
+                alert('Please enter a valid number of days (1-30).');
+                return;
+            }
+            
+            // Show success message and redirect to cart
+            alert('Item added to cart successfully!');
+            window.location.href = 'cart.html';
+        }
+        feather.replace();
+    </script>
+</body>
+</html>
